@@ -18,18 +18,7 @@ This repository provides both empirical spike detection pipelines and a ground-t
 ├── simulated_spike_data.npz               # Synthesized recording (Seed = 42, matching shapes and dtypes)
 │
 ├── Simulated_Spike_Data_Modeling.ipynb    # Comprehensive master notebook integrating all 4 models & diagnostics
-├── 1_Spike_Poisson_Modeling_new.ipynb     # Poisson timing, sine drift, noise ACF & paired background diagnostics
-├── 2_Drift_Sine_Modeling.ipynb            # Dedicated baseline drift sine modeling notebook
-├── 3_Noise_Gaussian_Modeling.ipynb        # Dedicated Gaussian background noise notebook
-├── 4_Single_Spike_ExpDecay_Modeling.ipynb # Dedicated single spike exponential decay waveform notebook
-│
-├── Assignment_2A.ipynb                    # Assignment 2A working notebook (Parts 1, 2, and 3)
-├── Assignment_2A_Standard.ipynb           # Standardized executed Assignment 2A notebook
-├── Assignment_2A_Submission.pdf           # Concise 3-page worked solution report for Assignment 2A
-├── Assignment_2B.ipynb                    # Assignment 2B notebook (Detector implementation, Sensitivity, NumPy benchmark)
-├── Assignment_2B_Submission.pdf           # Concise 3-page worked solution report for Assignment 2B
-│
-├── figures/                               # Publication-quality diagnostic figures (sim_fig1 through sim_fig6)
+                            # Publication-quality diagnostic figures (sim_fig1 through sim_fig6)
 ├── requirements.txt                       # Python dependencies
 └── README.md                              # Repository documentation
 ```
@@ -103,8 +92,7 @@ Evaluating the combined background ($b(t) + \epsilon(t)$) at the exact 9,141 unm
 1. **The 95% Confidence Level ($\alpha = 0.05$) Pitfall:** Standard statistical significance ($V_{\text{th}} = F_V^{-1}(0.95) = 0.9953\text{ V}$) captures 500 samples across **279 false-positive noise triggers**. Because drifted noise peaks reach $\approx 2.20\text{ V}$, a valid spike threshold must be placed on the stable plateau ($[2.81\text{ V}, 4.08\text{ V}]$), such as $V_{\text{th}} = 3.0\text{ V}$.
 2. **Global Threshold vs. Severe Baseline Wander:** A static threshold of $3.0\text{ V}$ succeeds on this recording because spike peaks ($>4.12\text{ V}$) remain separated from the drifted noise floor ($<2.4\text{ V}$). In recordings with larger baseline wander ($>3\text{ V}$), adaptive local thresholding or digital high-pass filtering is required.
 3. **Microscopic Breakdown of Poisson Independence:** While macroscopic 1-second counts conform to Poisson statistics ($F \approx 1.0$, exponential ISI $p = 0.72$), the biophysical absolute refractory period ($\tau_{\text{ref}} \ge 2\text{--}5\text{ ms}$) strictly prevents sub-millisecond inter-spike intervals.
-4. **Real-World 50 Hz Powerline Mains Hum (Nigerian Engineering Context):** In Nigeria, the 50 Hz / 230 V electrical grid and backup diesel/petrol generator or solar inverter harmonics couple $20\text{ ms}$ sinusoidal interference ($20\text{ samples}$ at $1\text{ kHz}$). Positive crests cause periodic false positives, and periodic clustering violates Poisson memorylessness unless filtered by a digital 50 Hz notch filter.
-5. **Drift Non-Periodicity:** The sine function model assumes pure periodicity. Over extended recordings, biological electrode drift exhibits $1/f^\alpha$ pink noise or polarization ramps.
+4. **Drift Non-Periodicity:** The sine function model assumes pure periodicity. Over extended recordings, biological electrode drift exhibits $1/f^\alpha$ pink noise or polarization ramps.
 
 ---
 
@@ -127,8 +115,6 @@ jupyter notebook
 ```
 
 * Open [`Simulated_Spike_Data_Modeling.ipynb`](Simulated_Spike_Data_Modeling.ipynb) to inspect the complete integrated modeling, synthesis, and comparative analysis pipeline.
-* Open [`1_Spike_Poisson_Modeling_new.ipynb`](1_Spike_Poisson_Modeling_new.ipynb) to explore the expanded diagnostics for spike timing, sine drift fitting, and noise autocorrelation analysis.
-* Open [`Assignment_2B.ipynb`](Assignment_2B.ipynb) to inspect the detector implementation, unit test suite, and the $\approx 71\times$ vectorized NumPy speedup benchmark.
 
 ### 3. Generating the Simulated Data via Python Script
 To regenerate `simulated_spike_data.npz` and all diagnostic figures programmatically:
