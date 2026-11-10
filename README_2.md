@@ -30,12 +30,7 @@ This repository provides both empirical spike detection pipelines and a ground-t
 ├── team_reconstruction.npz                        # Standardized candidate submission file (Alias)
 ├── evaluate_team.py                               # Standalone inter-team evaluation module & CLI tool
 │
-├── Assignment_2A.ipynb                    # Assignment 2A working notebook (Parts 1, 2, and 3)
-├── Assignment_2A_Standard.ipynb           # Standardized executed Assignment 2A notebook
-├── Assignment_2A_Submission.pdf           # Concise 3-page worked solution report for Assignment 2A
-├── Assignment_2B.ipynb                    # Assignment 2B notebook (Detector implementation, Sensitivity, NumPy benchmark)
-├── Assignment_2B_Submission.pdf           # Concise 3-page worked solution report for Assignment 2B
-│
+├
 ├── figures/                               # Diagnostic & evaluation overlay figures
 ├── requirements.txt                       # Python dependencies
 └── README.md                              # Repository documentation
