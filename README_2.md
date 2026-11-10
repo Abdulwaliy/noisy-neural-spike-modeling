@@ -234,8 +234,7 @@ jupyter notebook
 
 * Open [`Reverse_Engineering_Competition_Solution.ipynb`](Reverse_Engineering_Competition_Solution.ipynb) to inspect the complete competition solution, including Part 1 standardized generation, Part 2 evaluator test run, Part 3 self-evaluation bias analysis, and class batch evaluation harness.
 * Open [`Simulated_Spike_Data_Modeling.ipynb`](Simulated_Spike_Data_Modeling.ipynb) to inspect the complete integrated modeling, synthesis, and comparative analysis pipeline.
-* Open [`1_Spike_Poisson_Modeling_new.ipynb`](1_Spike_Poisson_Modeling_new.ipynb) to explore the expanded diagnostics for spike timing, sine drift fitting, and noise autocorrelation analysis.
-* Open [`Assignment_2B.ipynb`](Assignment_2B.ipynb) to inspect the detector implementation, unit test suite, and the $\approx 71\times$ vectorized NumPy speedup benchmark.
+
 
 ### 3. Generating the Simulated Data via Python Script
 To regenerate `simulated_spike_data.npz` and all diagnostic figures programmatically:
